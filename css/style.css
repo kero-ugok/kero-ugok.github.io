@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+
+body {
+   overflow-x: hidden;
+   padding: 0;
+   text-align: center;
+}
+
+.background {
+   height: 2000px;
+   background: #fffffc;
+   background-image: linear-gradient(90deg, #ddd 1px, transparent 0),linear-gradient(#ddd 1px, transparent 0);
+   background-size: 10px 9px;
+   background-repeat: repeat;
+   background-attachment: fixed;
+}
+
+
+
+header {
+   top: 0;
+   left: 0;
+   width: 100%;
+   margin: 0;
+   height: 60px;
+   position: fixed;
+   background-color: #222222;
+   border-bottom: solid 2px #00a960;
+   z-index: 500;
+}
+
+header h1 {
+   font-size: 40px;
+   margin: 5px;
+   color: #fffffc;
+   display: inline-block;
+   font-family: 'Source Code Pro', monospace;
+}
+
+header h1 span {
+   color: #008048;
+}
+
+nav {
+   position: fixed;
+   top: -300px;
+   background-color: #00a960;
+   color: #ffffff;
+   z-index: 1000;
+   height: 240px;
+   width: 100%;
+   padding: 30px 100px;
+   font-family: 'Source Code Pro', monospace;
+   transition: all .5s ease-out 0s;
+}
+
+nav ul {
+   list-style: none;
+   text-align: left;
+}
+
+nav li {
+   margin: 10px;
+}
+
+nav a {
+   text-decoration: none;
+   font-size: 30px;
+   color: #ffffff;
+}
+
+/* ハンバーガー部分記述 */
+.hamburger {
+   position: absolute;
+   top: 0;
+   right: 0;
+   padding: 4px 9px 0 10px;
+   margin: 4px 5px 4px 0;
+   width: 30px;
+   height: 45px;
+   z-index: 600;
+   cursor: pointer;
+   background-color: #00a960;
+   border-radius: 100px;
+   transition: all 1s;
+}
+
+.hamburger_line {
+   position: absolute;
+   left: 12px;
+   margin-top: 10px;
+   width: 25px;
+   height: 3px;
+   background-color: #fffffc;
+   transition: all .3s;
+}
+
+.hamburger_line2 {
+   margin-top: 20px;
+   opacity: 1;
+}
+
+.hamburger_line3 {
+   margin-top: 30px;
+}
+
+
+/* ハンバーガーが押されたとき */
+.nav_open nav {
+   top: 0;
+}
+
+.nav_open .hamburger {
+   background-color: #fffffc;
+}
+
+.nav_open .hamburger_line1 {
+   top: 13px;
+   transform: rotate(-45deg);
+   background-color: #00a960;
+}
+
+.nav_open .hamburger_line2 {
+   background-color: #00a960;
+   left: 30px;
+   opacity: 0;
+}
+
+.nav_open .hamburger_line3 {
+   transform: rotate(45deg);
+   background-color: #00a960;
+   top: -6px;
+}
+
+main {
+   position: absolute;
+   z-index: 200;
+   top: 550px;
+   left: 0;
+   width: 100%;
+   margin: 60px auto 50px auto;
+}
+
+.logo {
+   width: 400px;
+   margin: 0 auto;
+   position: fixed;
+   z-index: 0;
+   left: 32%;
+   top: 100px;
+}
+
+.logo img {
+   width: 400px;
+}
+
+.container {
+   position: relative;
+   width: 100%;
+   z-index: 200;
+   margin: 0px auto;
+   padding: 10px 0;
+}
+
+section {
+   position: relative;
+   z-index: 100;
+   margin: 10px 0 200px -25%;
+   width: 150%;
+   padding: 10px;
+   transform: rotate(5deg) translate3d(0, 0, 0);
+   background-color: rgb(0,169,96);
+   box-shadow: 0px 20px #222222;
+   
+}
+
+h2 {
+   font-size: 30px;
+   text-align: left;
+   padding-left: .2em;
+   margin: 5px;
+   color: #fffffc;
+   border-left: solid 20px;
+   border-color: #222222;
+   font-family: 'Source Code Pro', monospace;
+}
+
+aside {
+   margin: 30px auto;
+   padding: 5px 0 30px 0;
+   width: 900px;
+   transform: rotate(-5deg) translate3d(0, 0, 0);
+   color: #fffffc;
+}
+
+.plo table {
+   margin: 10px auto;
+   text-align: center;
+   border-collapse: collapse;
+   border: solid 1px #222222;
+   font-family: 'M PLUS Rounded 1c', sans-serif;
+   font-size: 20px;
+}
+
+.plo table th {
+   background-color: #222222;
+   border: solid 1px #222222;
+   color: #fffffc;
+   width: 7em;
+}
+
+.plo table td {
+   background-color: rgba(255,255,255,.5);
+   color: #222222;
+   border: solid 1px #222222;
+   width: 7em;
+}
+
+.topbuttom {
+   position: fixed;
+   width: 100px;
+   height: 100px;
+   background-color: #222;
+   z-index: 500;
+   line-height: 100px;
+   border-radius: 55px;
+   right: 20px;
+   bottom: 20px;
+   
+}
+
+.topbuttom p {
+   color: #fffffc;
+   font-size: 30px;
+}
