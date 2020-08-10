@@ -214,7 +214,7 @@ h4 {
     width: 100%;
     display: block;
   }
-  
+
   .top_phone img {
     width: 100%;
   }
@@ -235,4 +235,24 @@ h4 {
   .top_phone img {
     width: 100%;
   }
+
+  main h2 {
+    height: 100px;
+    font-size: 30px;
+    line-height: 115px;
+  }
+
+  .new_album img {
+    width: 80%;
+  }
+  
+  .new_album p {
+	font-size: 15px;
+}
+  
+  .new_album li {
+  font-size: 15px;
+  }
+  
+  
 }
