@@ -101,3 +101,33 @@
   font-size: 16px;
   box-shadow: 3px 3px rgba(253, 202, 64, 1);
 }
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .back .rect {
+    width: 200px;
+    height: 200px;
+    background-color: #fdca40;
+    position: absolute;
+    top:590px;
+    right: -100px;
+    transform: rotate(45deg);
+  }
+  
+  .con_link {
+    width: 100%;
+  }
+  
+  .con_link img {
+    width: 14px;
+    margin-right: 5px;
+  }
+  
+  .con_link a {
+    font-size: 15px;
+  }
+  
+  .con_link p {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+}
