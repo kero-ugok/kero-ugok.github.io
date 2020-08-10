@@ -4,7 +4,6 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-
 }
 
 /* header */
@@ -165,7 +164,6 @@ nav .link img {
 
 main {
   width: 100%;
-  overflow-x: hidden;
 }
 
 .contante {
