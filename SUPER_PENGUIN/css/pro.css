@@ -97,11 +97,11 @@
 
   
   .name p {
-    font-size: 15px;
+    font-size: 3.5vw;
   }
   
   .name p span {
-    font-size: 12px;
+    font-size: 2.5vw;
   }
   
   .line {
@@ -109,6 +109,6 @@
   }
   
   .bio_l {
-    margin: 15px auto;
+    margin: 25px auto 5px auto;
   }
 }
