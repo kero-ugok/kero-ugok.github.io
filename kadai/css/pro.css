@@ -1,0 +1,84 @@
+.top {
+  width: 100%;
+  margin-top: 59px;
+}
+
+.top img {
+  width: 100%;
+}
+
+.back p {
+  width: 800px;
+  position: absolute;
+  color: #eeeeee;
+  font-family: 'Anton', sans-serif;
+  font-size: 150px;
+  top: 282px;
+  left: -340px;
+  transform: rotate(90deg);
+}
+
+.back .rect {
+  width: 500px;
+  height: 500px;
+  background-color: #fdca40;
+  position: absolute;
+  top: 250px;
+  right: -350px;
+  transform: rotate(45deg);
+}
+
+.member {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.left,
+.right {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.name p {
+  font-size: 25px;
+  margin: 0;
+  border-bottom: dotted 2px #3c7a89;
+}
+
+.name span {
+  font-size: 20px;
+}
+
+.memlink img {
+  width: 26px;
+  margin: 5px;
+}
+
+.name {
+  margin: 25px 0;
+}
+
+.bio {
+  width: 90%;
+  margin: 50px auto 0 auto;
+}
+
+.bio_l p{
+  text-align: center;
+  padding: 5px;
+  border: solid 1px #fdca40;
+  border-radius: 50px;
+  margin: 0;
+}
+
+.line {
+  width: 1px;
+  height: 50px;
+  margin: 0 auto;
+  background-color: #fdca40;
+}
+
+.bio_r {
+  margin-top: 5px;
+}

@@ -1,0 +1,103 @@
+.contact {
+  width: 90%;
+  margin: 50px auto;
+}
+
+.back p {
+  width: 500px;
+  position: absolute;
+  color: #eeeeee;
+  font-family: 'Anton', sans-serif;
+  font-size: 150px;
+  top: 190px;
+  left: -190px;
+  transform: rotate(90deg);
+}
+
+.back .rect {
+  width: 500px;
+  height: 500px;
+  background-color: #fdca40;
+  position: absolute;
+  top: 250px;
+  right: -350px;
+  transform: rotate(45deg);
+}
+
+.con_link {
+  width: 395px;
+  margin: 50px auto;
+}
+
+.con_link img {
+  width: 20px;
+}
+
+.con_link a {
+  color: #222;
+  border-bottom: solid 1px #222;
+  font-size: 20px;
+  display: block;
+  margin-top: 20px;
+}
+
+.con_link p {
+  margin: 0;
+  color: #222;
+  font-size: 12px;
+}
+
+.form {
+  margin: 50px 0;
+}
+
+.form h4 {
+  font-size: 25px;
+  border-bottom: solid 1px #222;
+  margin-bottom: 50px;
+}
+
+.form-item {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.form-item label {
+  margin: 20px 0 0 0;
+}
+
+.form-item span {
+  color: #3c7a89;
+  font-size: 12px;
+}
+
+.form-item input, .form-item textarea {
+  font-size: 14px;
+  background-color: #f6f8f6;
+  border: solid 1px #999;
+}
+
+.emailform {
+  width: 90%;
+}
+
+.contentform {
+  resize: none;
+}
+
+.titleform, .contentform {
+  width: 100%;
+}
+
+.btnform {
+  display: block;
+  margin: 20px auto 0 auto;
+  background-color: #3c7a89;
+  color: #f6f8f6;
+  border: none;
+  border-radius: 50px;
+  width: 70px;
+  height: 35px;
+  font-size: 16px;
+  box-shadow: 3px 3px rgba(253, 202, 64, 1);
+}

@@ -1,0 +1,169 @@
+.disc {
+  width: 90%;
+  margin: 50px auto;
+}
+
+.back p {
+  width: 750x;
+  position: absolute;
+  color: #eeeeee;
+  font-family: 'Anton', sans-serif;
+  font-size: 150px;
+  top: 315px;
+  left: -315px;
+  transform: rotate(90deg);
+}
+
+.back .rect {
+  width: 500px;
+  height: 500px;
+  background-color: #fdca40;
+  position: absolute;
+}
+
+.back .rect1 {
+  top: 250px;
+  right: -350px;
+  transform: rotate(45deg);
+}
+
+.back .rect2 {
+  top: 950px;
+  left: -470px;
+  transform: rotate(70deg);
+}
+
+#top {
+  width: 75px;
+  height: 75px;
+  background-color: #3c7a89;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 4px 4px rgba(253, 202, 64, 1);
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  font-size: 25px;
+  color: #f6f8f6;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  transition: all .2s ease-out 0s;
+  opacity: 0;
+}
+
+.top_show {
+  opacity: 1;
+}
+
+.sort {
+  text-align: center;
+
+}
+
+#all,
+#single,
+#album {
+  width: 20%;
+  background-color: #3c7a89;
+  font-family: 'Anton', sans-serif;
+  font-size: 2rem;
+  color: #f6f8f6;
+  border: none;
+  box-shadow: 5px 5px rgba(253, 202, 64, 1);
+  margin: 0 10px;
+}
+
+.jacket {
+  margin: 50px auto 0 auto;
+  padding-bottom: 50px;
+  display: flex;
+  flex-flow: row-reverse wrap-reverse;
+  justify-content: space-between;
+  align-content: space-between;
+  border-bottom: dotted 3px #3c7a89;
+}
+
+.single, .album {
+  width: 15%;
+  flex: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+#all:focus, #single:focus, #album:focus, .single:focus, .album:focus {
+  outline:0;
+}
+
+.single img, .album img {
+  width: 100%;
+}
+
+.cd {
+  width: 90%;
+  margin: -100px auto 0 auto;
+  padding-top: 100px;
+  text-align: center;
+  display: none;
+}
+
+.cd h4 {
+  color: #3c7a89;
+  border-bottom: solid 1px #3c7a89;
+  font-family: 'Anton', 'Noto Sans JP', sans-serif;
+  font-size: 30px;
+  line-height: 25px;
+  text-align: left;
+}
+
+.cd img {
+  width: 90%;
+  box-shadow: 20px 20px rgba(253, 202, 64, 1);
+  margin-top: 50px;
+}
+
+.cd p {
+  text-align: left;
+  font-size: 20px;
+  color: #222;
+}
+
+.cd .release {
+  margin-top: 50px;
+  color: #3c7a89;
+}
+
+.cd ul {
+  text-align: left;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.cd li {
+  list-style: none;
+  border-bottom: solid 1px #3c7a89;
+  font-size: 17px;
+  line-height: 30px;
+}
+
+.cd li:last-child {
+  border-bottom: none;
+}
+
+.cd .left,
+.cd .right {
+  padding: 0;
+}
+
+.cd .cd_info {
+  font-size: 12px;
+}
+
+.void2 {
+  margin-top: 50px;
+}
+
+.cd_show {
+  display: block;
+}

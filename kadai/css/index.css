@@ -1,0 +1,199 @@
+.top_pc {
+  margin: 59px 0 0 0;
+  width: 100%;
+}
+
+.top_pc img {
+  width: 100%;
+}
+
+main h2 {
+  height: 200px;
+  background-color: #fdca40;
+  margin: -6px 0 0 0;
+  text-align: center;
+  color: #222;
+  font-family: 'Courier Prime', monospace;
+  font-size: 80px;
+  line-height: 200px;
+}
+
+.back p {
+  width: 840px;
+  position: absolute;
+  color: #eeeeee;
+  font-family: 'Anton', sans-serif;
+  font-size: 150px;
+  top: 305px;
+  left: -360px;
+  transform: rotate(90deg);
+}
+
+.back .rect {
+  width: 500px;
+  height: 500px;
+  background-color: #fdca40;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.back .rect1 {
+  top: 750px;
+  right: -250px;
+}
+
+.back .rect2 {
+  top: 2300px;
+  left: -300px;
+}
+
+.new_album {
+  margin: 0 auto;
+  padding: 0;
+
+}
+
+.new_album {
+  width: 90%;
+}
+
+.new_album .void1,
+.new_album .void2 {
+  text-align: center;
+}
+
+.new_album img {
+  width: 500px;
+  box-shadow: 20px 20px rgba(253, 202, 64, 1);
+}
+
+.new_album p {
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.new_album .release {
+  color: #3c7a89;
+  margin-top: 50px;
+}
+
+.new_album .container {
+  padding: 0;
+  margin: 0 auto;
+}
+
+.new_album ul {
+  margin-top: 20px;
+  padding: 0;
+}
+
+.new_album li {
+  list-style: none;
+  border-bottom: solid 1px #3c7a89;
+  font-size: 17px;
+  line-height: 30px;
+}
+
+.new_album ul .last {
+  border-bottom: none;
+}
+
+.new_album .left,
+.new_album .right {
+  padding: 0;
+}
+
+.new_album .cd_info {
+  font-size: 12px;
+}
+
+.new_album .void2 {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.information {
+  width: 90%;
+  margin: 50px auto;
+}
+
+.info {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.info a {
+  display: inline-block;
+  width: 100%;
+  height: 100px;
+  border-bottom: solid 1px #aaaaaa;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.info a:hover {
+  text-decoration: none;
+}
+
+.first {
+  border-top: solid 1px #aaa;
+}
+
+.date {
+  display: inline-block;
+  width: 100px;
+  height: 20px;
+  background-color: #3c7a89;
+  text-align: center;
+}
+
+.date p {
+  font-family: 'Anton', sans-serif;
+  line-height: 21px;
+  color: #e6e8e6;
+  margin: 0;
+}
+
+h4 {
+  font-size: 20px;
+  color: #222;
+  text-decoration: none;
+}
+
+.more {
+  width: 100%;
+  text-align: right;
+  margin: 10px auto;
+}
+
+.live {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.live a {
+  display: inline-block;
+  height: 80px;
+  line-height: 80px;
+  color: #222;
+  border-bottom: solid 1px #aaa;
+  width: 100%;
+  font-size: 20px;
+}
+
+.live a:hover {
+  color: #222;
+  text-decoration: none;
+}
+
+.more a {
+  font-family: 'Anton', sans-serif;
+  font-size: 20px;
+  color: #3c7a89;
+  border-bottom: none;
+}
+
+.more a:hover {
+  text-decoration: none;
+  color: #fdca40;
+}
