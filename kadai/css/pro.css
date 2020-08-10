@@ -87,6 +87,18 @@
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
+
+  .back .rect {
+    width: 200px;
+    height: 200px;
+    background-color: #fdca40;
+    position: absolute;
+    top:360px;
+    right: -100px;
+    transform: rotate(45deg);
+  }
+
+  
   .name p {
     font-size: 15px;
   }
