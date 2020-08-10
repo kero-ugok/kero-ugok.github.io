@@ -83,7 +83,8 @@
   border-bottom: dotted 3px #3c7a89;
 }
 
-.single, .album {
+.single,
+.album {
   width: 15%;
   flex: auto;
   margin: 0;
@@ -92,11 +93,16 @@
   cursor: pointer;
 }
 
-#all:focus, #single:focus, #album:focus, .single:focus, .album:focus {
-  outline:0;
+#all:focus,
+#single:focus,
+#album:focus,
+.single:focus,
+.album:focus {
+  outline: 0;
 }
 
-.single img, .album img {
+.single img,
+.album img {
   width: 100%;
 }
 
@@ -167,3 +173,43 @@
 .cd_show {
   display: block;
 }
+
+@media only screen and (min-width: 768px) and (max-width: 1068px) {}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .back .rect {
+    width: 200px;
+    height: 200px;
+  }
+
+  .back .rect1 {
+    top: 500px;
+    right: -150px;
+  }
+
+  .back .rect2 {
+    top: 1100px;
+    left: -180px;
+  }
+  
+  #all,
+  #single,
+  #album {
+    width: 75px;
+   font-size: 20px; 
+  }
+  
+  .single,
+  .album {
+    width: 30%;
+  }
+  
+  .cd p {
+    font-size: 15px;
+  }
+  
+  .cd ul li {
+    font-size: 14px;
+  }
+}
+
