@@ -165,6 +165,7 @@ nav .link img {
 
 main {
   width: 100%;
+  overflow-x: hidden;
 }
 
 .contante {
