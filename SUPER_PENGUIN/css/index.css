@@ -279,23 +279,23 @@ h4 {
   }
 
   .new_album p {
-    font-size: 4vw;
+    font-size: 3vw;
   }
 
   .new_album li {
-    font-size: 4vw;
+    font-size: 2.5vw;
   }
 
   .information .date {
-    width: 30%;
+    width: 25%;
   }
 
   .information .date p {
-    font-size: 4vw;
+    font-size: 2.5vw;
   }
 
   .information h4 {
-    font-size: 4vw;
+    font-size: 3vw;
     margin-top: 10px;
   }
   
@@ -309,6 +309,6 @@ h4 {
   }
   
   .live p {
-    font-size: 3.2vw;
+    font-size: 3vw;
   }
 }
