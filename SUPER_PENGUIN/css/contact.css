@@ -77,6 +77,10 @@
   border: solid 1px #999;
 }
 
+.name {
+  width: 10%;
+}
+
 .emailform {
   width: 90%;
 }
