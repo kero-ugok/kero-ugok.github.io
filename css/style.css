@@ -710,11 +710,15 @@ footer {
   }
 
   .imgs-right {
-    width: 33%;
+    width: 100%;
     display: flex;
     flex-wrap: nowrap;
   }
 
+  .imgs-right img{
+    width: 33%;
+}
+  
   .content-caption {
     flex-direction: column;
   }
