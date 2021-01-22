@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>釣りゲー</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    body {
+      text-align: center;
+    }
+    
+    #game {
+      padding: 0 auto;
+      display: block;
+    }
+    
+    button {
+      margin: 10px 5px;
+      color: #fffffe;
+      border: none;
+      font-size: 20px;
+      outline: none;
+        
+    }
+    
+    #left, #right {
+      width: 60px;
+      height: 40px;
+    }
+    
+    #left {
+      background-color: #87a330;
+      border-radius: 20px 2px 2px 20px;
+    }
+    
+    #right {
+      background-color: #cc3f0c;
+      border-radius: 3px 20px 20px 3px;
+    }
+    
+    #fishing {
+      width: 80px;
+      height: 40px;
+      background-color:#0b4f6c;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>釣り</h1>
+    <h2>Canvas</h2>
+  </header>
+  <div id="game"></div>
+  <button id="left">←</button>
+  <button id="fishing">つる</button>
+  <button id="right">→</button>
+  <footer>©️けろ</footer>
+
+  <script>
+    //見切り発車なので汚いです、自分でもよくわかりません
+    let canvas = document.createElement('canvas');
+    document.getElementById('game').appendChild(canvas);
+    let left = document.getElementById('left');
+    let right = document.getElementById('right');
+    let fish_btn = document.getElementById('fishing');
+    let score = 0;
+    let w = 0;
+    let gameStart = true;
+
+    let getRandom = (min, max) => {  //範囲指定乱数作成
+      let random = Math.floor(Math.random() * (max + 1 - min)) + min;
+      return random;
+    }
+
+    canvas.width = 300;
+    canvas.height = 300;
+
+    let ctx = canvas.getContext('2d');
+
+    let gameTop = () => {  //top画面表示
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0, 0, 300, 300);
+      ctx.strokeStyle = 'black';
+      ctx.strokeRect(0, 0, 300, 300);
+      ctx.font = 'bold 50px sans-serif';
+      ctx.fillStyle = 'blue';
+      ctx.fillText('魚釣りゲーム', 0, 120);
+      ctx.fillStyle = 'black';
+      ctx.font = '20px sans-serif';
+      ctx.fillText('画面をクリック！', 70, 220);
+    }
+
+    gameTop();
+    
+    let game = () => {  //ゲーム記述
+      ctx.fillStyle = 'rgb(0,0,139)';
+      ctx.fillRect(0, 210, 300, 90);
+
+      let arcY = 210;
+      let rectY = 150;
+      let co = ['rgb(0,0,205)', 'rgb(0,0,255)'];
+      let seaCount = 0;
+      let seaOne, seaTwo;
+
+      let sea = (seaOne, seaTwo) => { //波描画
+        let arcDraw = (arcX, addX) => { //半円描画
+          ctx.beginPath();
+          ctx.arc(arcX + addX, arcY, 25, 0, Math.PI, false);
+          ctx.fill();
+        }
+
+        ctx.fillStyle = 'rgb(0,0,139)';
+        ctx.fillRect(0, 210, 300, 90);
+
+        arcY = 210; //各Y座標初期化
+        rectY = 150;
+
+        for (let i = 0; i <= co.length - 1; i += 1) {
+          ctx.fillStyle = co[i]; //色指定
+          for (let arcX = -50; arcX <= 350; arcX += 50) {
+            if (seaCount === 0) { //下段描画
+              arcDraw(arcX, seaOne);
+            }
+            if (seaCount === 1) {
+              arcDraw(arcX, seaTwo); //上段描画
+            }
+          }
+          if (seaCount === 0) { //下段描画
+            ctx.fillRect(0, rectY, 300, 60);
+            arcY -= 70;
+            rectY -= 60;
+            seaCount = 1;
+          } else if (seaCount === 1) { //上段描画
+            ctx.fillRect(0, rectY, 300, 60);
+            arcY -= 70;
+            rectY -= 30;
+            seaCount = 0;
+          }
+        }
+      }
+
+      let sea_se = () => { //波繰り返し描画2回目
+        seaOne = 45;
+        seaTwo = 25;
+        sea(seaOne, seaTwo);
+      }
+
+      let seaAnim = () => { //波繰り返し描画
+        if (w < 800) {
+          seaOne = 25;
+          seaTwo = 45;
+          sea(seaOne, seaTwo);
+          setTimeout(sea_se, 1500);
+        }
+      }
+
+      seaAnim(); //波初期描画
+      let sea_init;
+      sea_init = setInterval(seaAnim, 3000); //波ループアニメーション開始
+
+      let shipCenter = 260;
+      let fishNeedleY = 70;
+      let fishCo = ['yellow', 'orange', 'green', 'lightgreen', 'pink'];
+
+
+      let shipDraw = () => { //船描画
+        if (w < 1200) {
+          sea(seaOne, seaTwo);
+          ctx.fillStyle = 'skyblue'; //空描画
+          ctx.fillRect(0, 0, 300, 90);
+
+          ctx.fillStyle = 'lightgreen';  //制限時間描画
+          ctx.fillRect(0, 0, 300, 15);
+          ctx.fillStyle = 'orange';
+          ctx.fillRect(0, 0, (w += 1) / 4, 15);
+
+          ctx.strokeStyle = 'black'; //竿描画
+          ctx.beginPath();
+          ctx.moveTo(shipCenter - 17, 65);
+          ctx.lineTo(shipCenter - 40, 35);
+          ctx.stroke();
+
+          ctx.strokeStyle = 'white'; //釣り糸描画
+          ctx.beginPath();
+          ctx.moveTo(shipCenter - 40, 35);
+          ctx.lineTo(shipCenter - 40, fishNeedleY);
+          ctx.stroke();
+
+          ctx.beginPath(); //釣り針描画
+          ctx.arc(shipCenter - 45, fishNeedleY, 5, 0, Math.PI, false);
+          ctx.stroke();
+
+          ctx.fillStyle = 'black'; //煙突描画
+          ctx.fillRect(shipCenter - 5, 25, 10, 10);
+
+          ctx.fillStyle = 'white'; //船上部描画
+          ctx.fillRect(shipCenter - 15, 35, 30, 30);
+
+          ctx.font = '10px sans-serif'
+          ctx.fillText('SCORE: ' + score, 0, 300);
+
+          ctx.fillStyle = 'lightblue'; //窓描画
+          ctx.fillRect(shipCenter - 5, 45, 10, 10);
+
+          ctx.fillStyle = 'red'; //船底描画
+          ctx.beginPath();
+          ctx.arc(shipCenter, 55, 35, 6.5, Math.PI, false);
+          ctx.fill();
+
+        } else if (w >= 1200) {  //結果画面記述
+          ctx.fillStyle = 'white';
+          ctx.fillRect(0, 0, 300, 300);
+          ctx.strokeStyle = 'black';
+          ctx.strokeRect(0, 0, 300, 300);
+          ctx.font = 'bold 50px sans-serif';
+          ctx.fillStyle = 'blue';
+          ctx.fillText('FINISH!', 50, 150);
+          ctx.font = '20px sans-serif';
+          ctx.fillStyle = 'black';
+          ctx.fillText('SCORE: ' + score, 50, 200);
+          gameStart = false; //canvas再click時top画面に戻る
+        }
+      }
+
+      let sa;
+      let fa = 3;
+      let fCo = 0;
+      let ship_init, fishing_init, sea_ship;
+
+      let shipAnim = () => { //船移動描画
+        if (w < 1200) {
+          if (shipCenter >= 53 && sa === 'left') { //左移動時
+            shipCenter -= 3;
+            console.log(shipCenter);
+          } else if (shipCenter <= 263 && sa === 'right') { //右移動時
+            shipCenter += 3;
+            console.log(shipCenter);
+          }
+        }
+      }
+
+      let fishing = () => { //釣り糸描画
+        if (w < 1200) {
+          if (fishNeedleY + fa > 69 && fishNeedleY + fa < 270) { //釣り糸上下
+            fishNeedleY += fa;
+          }
+          if (fishNeedleY <= 70 || fishNeedleY >= 268) { //アニメーション停止・上下入れ替え
+            clearInterval(fishing_init);
+            if (fa === 3) {
+              fa = -3;
+            } else if (fa === -3) {
+              fa = 3;
+            }
+            fCo = 0;
+          }
+          sea(seaOne, seaTwo); //波再描画
+          shipDraw();
+        }
+      }
+
+      left.onmousedown = () => {
+        clearInterval();
+        sa = 'left';
+        ship_init = setInterval(shipAnim, 30);
+      }
+
+      left.onmouseup = () => {
+        sa = 0;
+        clearInterval(ship_init);
+      }
+
+      right.onmousedown = () => {
+        sa = 'right';
+        ship_init = setInterval(shipAnim, 30);
+      }
+
+      right.onmouseup = () => {
+        sa = 0;
+        clearInterval(ship_init);
+      }
+
+      fish_btn.addEventListener('click', () => {
+        fCo += 1;
+        if (fCo === 1) {
+          fishing_init = setInterval(fishing, 30);
+        }
+      });
+
+      let fishAnim = () => {
+        let fishTF;
+        let fish_init;
+        let coX = getRandom(0, fishCo.length - 1);
+        let LR = getRandom(0, 1);
+        let fishX;
+        let fishY = getRandom(100, 270);
+        if (LR === 0) {
+          fishX = -15;
+        } else {
+          fishX = 315;
+        }
+
+        let fish = () => {  //魚描画
+          if (w < 1200) {
+            if (fishX >= -25 && fishX <= 325 && fishY < 300) {
+              fishTF = true;
+            } else {
+              fishTF = false;
+            }
+
+            if (fishTF === true && LR === 1) {
+              if (shipCenter - 40 >= fishX - 20 && shipCenter - 50 <= fishX + 20 && fishNeedleY + 5 >= fishY && fishNeedleY - 10 <= fishY) { //右出現魚当たり判定
+                fishY = 500;
+                score += 600;
+              } else {
+                ctx.fillStyle = fishCo[coX];
+                ctx.beginPath();
+                ctx.ellipse(fishX -= 0.5, fishY, 20, 10, 0, 0, 2 * Math.PI);
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.moveTo(fishX + 20, fishY);
+                ctx.lineTo(fishX + 30, fishY - 10);
+                ctx.lineTo(fishX + 30, fishY + 10);
+                ctx.closePath();
+                ctx.fill();
+              }
+            } else if (fishTF === true && LR === 0) {
+              if (shipCenter - 50 >= fishX - 20 && shipCenter - 40 <= fishX + 20 && fishNeedleY + 5 >= fishY && fishNeedleY - 10 <= fishY) {  //左出現魚当たり判定
+                fishY = 500;
+                score += 600;
+              } else {
+                ctx.fillStyle = fishCo[coX];
+                ctx.beginPath();
+                ctx.ellipse(fishX += 0.5, fishY, 20, 10, 0, 0, 2 * Math.PI);
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.moveTo(fishX - 20, fishY);
+                ctx.lineTo(fishX - 30, fishY - 10);
+                ctx.lineTo(fishX - 30, fishY + 10);
+                ctx.closePath();
+                ctx.fill();
+              }
+            } else {
+              clearInterval(fish_init);  //画面外時アニメーション終了
+            }
+
+          }
+
+        }
+        setInterval(function() {
+          fish_init = fish(coX, fishX, fishY, LR)  //魚描画
+        }, 1);
+      }
+
+      setInterval(shipDraw, 30);
+      setInterval(fishAnim, 600);  //600ms毎に魚出現
+    }
+
+    canvas.addEventListener('click', () => {
+      if (gameStart === true) {
+        game();
+      } else {
+        document.location.reload();  //リロード
+      }
+    });
+
+  </script>
+</body>
+
+</html>
