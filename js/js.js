@@ -43,8 +43,8 @@ let topNum = 1;
 let app = new Vue({
   el: '#app',
   data: {
-    pcTop: 'img/top_' + topNum + '.png',
-    phoneTop: 'img/phone_top_' + topNum + '.png',
+    pcTop: 'img/top_' + topNum + '.jpg',
+    phoneTop: 'img/phone_top_' + topNum + '.jpg',
     show: 'hide',
     img_1: '',
     img_1_2: '',
