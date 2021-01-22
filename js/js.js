@@ -64,8 +64,8 @@ let app = new Vue({
           this.phoneTop = 'img/phone_top_' + topNum + '.jpg';
         } else {
           topNum = 1;
-          this.pcTop = 'img/top_' + topNum + '.png';
-          this.phoneTop = 'img/phone_top_' + topNum + '.png';
+          this.pcTop = 'img/top_' + topNum + '.jpg';
+          this.phoneTop = 'img/phone_top_' + topNum + '.jpg';
         }
         setTimeout(this.chageTop, 7000);
       }, 7000);
