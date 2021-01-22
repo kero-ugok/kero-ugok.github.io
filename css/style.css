@@ -443,7 +443,7 @@ header {
 
 .content-about .date {
   position: absolute;
-  bottom: 5px;
+  bottom: 2px;
   right: 35px;
   font-size: 13px;
 }
