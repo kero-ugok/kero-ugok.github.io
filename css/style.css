@@ -716,7 +716,8 @@ footer {
   }
 
   .imgs-right img{
-    width: 33%;
+    width: 31vw;
+    height: auto;
 }
   
   .content-caption {
