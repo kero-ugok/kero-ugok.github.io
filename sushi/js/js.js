@@ -304,9 +304,17 @@ let app = new Vue({
     timer: function () {
       this.countDown = setTimeout(() => {
         this.lightAnswer();
-        miss.play();
+        if (sound) {
+          miss.play();
+        }
         this.sushiId = '';
-        setTimeout(this.quizAgain, 2000);
+        setTimeout(() => {
+          if (this.num < 10) {
+            setTimeout(this.quizAgain, 2000);
+          } else {
+            setTimeout(this.scoreBoard, 1500);
+          }
+        }, 2000);
       }, 16500);
     },
     quizAgain: function () {
@@ -327,7 +335,7 @@ let app = new Vue({
       this.btnCnt = false;
       this.timer();
     },
-    btnCalc: function(num) {
+    btnCalc: function (num) {
       if (!this.btnCnt) {
         this.lightAnswer();
         this.btnCnt = true;
