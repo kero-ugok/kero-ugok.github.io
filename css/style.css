@@ -193,7 +193,7 @@ header {
   margin: 0 auto;
 }
 
-.product h2 {
+.product h2, .want h2 {
   border-bottom: solid 2px #2ca58d;
   text-align: center;
   margin: 0 auto 100px;
@@ -544,6 +544,27 @@ footer {
   .content-about {
     width: 650px;
   }
+}
+
+.want {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.want h3 {
+  width: 100%;
+  background-color: #2ca58d;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.want-container {
+  width: 90%;
+  margin: 70px auto 150px auto;
 }
 
 @media only screen and (max-width: 667px) {
