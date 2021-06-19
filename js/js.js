@@ -11,12 +11,6 @@ let product = {
     Date: '2020/07 ~ 2020/08',
     url: 'SUPER_PENGUIN/index.html'
   },
-  tsuri: {
-    leftCaption: '<h3><a href="tsuri/index.html" target="_brank">魚釣りゲーム</a></h3><h4>Canvasを使用した魚釣りゲーム</h4><p>ウェブアプリケーション論という授業で制作した作品です。初めてCanvasを使用して制作しました。画像は使用しておらず、JavaScriptのみで動かしています。制作当初はバグが多く、デバッグ作業で一日が終わる日々でした。唯一治せなかったのが背景の海と魚を別々に動かしているため、魚が点滅してしまうバグです。悔しいです。</p>',
-    rightTags: '<div class="tag tag-alone">個人制作</div><div class="tag tag-htmlcss">HTML5 / CSS3</div><div class="tag tag-js">JavaScript</div>',
-    Date: '2020/07',
-    url: 'tsuri/index.html'
-  },
   totto: {
     leftCaption: '<h3><a href="https://uebxli.github.io/website-advanced/index.html" target="_brank">猫Cafe トット</a></h3><h4>架空猫カフェ公式サイト</h4><p>Web制作応援サークルにて、他学年と共同で制作したサイトです。ウェブデザイン、ヘッダー・トップを担当しました。全体的に優しい印象になるようデザインしました。反省点は横に伸びたデザインになってしまった点、横に広いウインドウで閲覧するとややくずれてしまう点です。</p>',
     rightTags: '<div class="tag tag-notalone">共同制作</div><div class="tag tag-htmlcss">HTML5 / CSS3</div><div class="tag tag-js">JavaScript</div>',
