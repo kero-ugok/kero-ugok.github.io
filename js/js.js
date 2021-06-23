@@ -98,16 +98,6 @@ let app = new Vue({
       this.productChandge();
       this.show = 'show';
     },
-    clickTsu: function () {
-      this.num = 2;
-      this.productChandge();
-      this.show = 'show';
-    },
-    clickTo: function () {
-      this.num = 3;
-      this.productChandge();
-      this.show = 'show';
-    },
     clickUgok: function () {
       this.num = 4;
       this.productChandge();
