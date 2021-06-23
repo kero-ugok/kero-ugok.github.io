@@ -99,17 +99,17 @@ let app = new Vue({
       this.show = 'show';
     },
     clickUgok: function () {
-      this.num = 4;
+      this.num = 2;
       this.productChandge();
       this.show = 'show';
     },
     clickMoppy: function () {
-      this.num = 5;
+      this.num = 3;
       this.productChandge();
       this.show = 'show';
     },
     clickSushi: function () {
-      this.num = 6;
+      this.num = 4;
       this.productChandge();
       this.show = 'show';
     }
