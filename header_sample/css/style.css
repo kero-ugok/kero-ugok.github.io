@@ -110,7 +110,12 @@ nav {
   box-sizing: border-box;
 }
 
-.corpolate .nav_under_item:first-child {
+.un_company {
+  display: flex;
+  flex-direction: column;
+}
+
+.un_company .nav_under_item:first-child {
   border-bottom: solid 1px #ccc;
 }
 
