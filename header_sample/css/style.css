@@ -293,7 +293,7 @@ input::placeholder {
   background-color: #f2157f;
   background-size: cover;
   z-index: 200;
-  top: -2500px;
+  top: -2900px;
   transition: .4s;
   display: none;
 }
